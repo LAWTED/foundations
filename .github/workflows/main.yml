@@ -1,0 +1,26 @@
+name: CI
+# 指定在main分支发生pull_request事件时才触发运行工作流程
+on:
+  pull_request:
+    branches: main
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      # 拉取项目代码
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # 下载node
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "12.x"
+      # 安装依赖
+      - name: Installing Dependencies
+        run: npm i
+      # 运行代码扫描
+      - name: Running Lint
+        run: npm run lint
+      # 运行自动化测试
+      - name: Running Test
+        run: npm run test
