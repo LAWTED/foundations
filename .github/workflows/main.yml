@@ -2,7 +2,7 @@ name: CI
 # 指定在main分支发生pull_request事件时才触发运行工作流程
 on:
   pull_request:
-    branches: main
+    branches: master
 jobs:
   Test:
     runs-on: ubuntu-latest
