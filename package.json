@@ -12,6 +12,11 @@
     "compile": "tsc src/index.ts --outDir lib",
     "test": "jest"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
