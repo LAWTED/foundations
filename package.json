@@ -15,12 +15,11 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,json,css,scss}\""
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    "./**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "**/*.{ts,tsx,js,json,css,scss}": [
+      "npm run format",
       "npm run lint",
-      "git add"
-    ],
-    "*.ts": "eslint --cache --fix"
+      "npm run lint:fix"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
